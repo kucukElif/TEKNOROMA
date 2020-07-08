@@ -1,27 +1,20 @@
-﻿using DAL.Entity;
-using DAL.Entity.Base;
-using DAL.Entity.Enum;
+﻿using DAL.Entity.Base;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace DAL.Entity
 {
-  public  class Product : CoreEntity
+  public  class Product:CoreEntity
     {
-        public string BarcodeNo { get; set; }
+        public string Barcode { get; set; }
         public string ProductName { get; set; }
         public short Quantity { get; set; }
+        [Column(TypeName ="decimal(18,2)")]
         public decimal UnitPrice { get; set; }
         public string ImagePath { get; set; }
-        public Guid CategoryId { get; set; }
-        public virtual ProductOrder ProductOrder { get; set; }
         public virtual Category Category { get; set; }
-        public Guid CategoryID { get; set; }
-        public virtual AppUser AppUser { get; set; }
-
-
-
-
+        public virtual List<OrderDetail> OrderDetails { get; set; }
     }
 }

@@ -13,8 +13,8 @@ namespace DAL.Entity
         public bool Gender { get; set; }
         public DateTime? BirthDate { get; set; }
 
-        public virtual List<Product> Products { get; set; }
-        public virtual List<Order> Orders { get; set; }
+        //public virtual List<Product> Products { get; set; }
+        //public virtual List<Order> Orders { get; set; }
 
 
     }

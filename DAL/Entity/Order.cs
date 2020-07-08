@@ -1,7 +1,7 @@
-﻿using DAL.Entity;
-using DAL.Entity.Base;
+﻿using DAL.Entity.Base;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Text;
 
 namespace DAL.Entity
@@ -11,15 +11,14 @@ namespace DAL.Entity
         public Order()
         {
             this.Confirmed = false;
-            ProductOrders = new List<ProductOrder>();
-
+            OrderDetails = new List<OrderDetail>();
         }
         public Guid AppUserID { get; set; }
-        public AppUser AppUser { get; set; }
-        public Guid CustomerId { get; set; }
+        public virtual AppUser AppUser { get; set; }
         public bool Confirmed { get; set; }
         public DateTime? OrderDate { get; set; }
-        public virtual List<ProductOrder> ProductOrders { get; set; }
-        public virtual AppUser AppUser { get; set; }
+        public decimal Total { get; set; }
+        public virtual List<OrderDetail> OrderDetails { get; set; }
+        public virtual Customer Customer { get; set; }
     }
 }

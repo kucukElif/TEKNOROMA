@@ -13,13 +13,16 @@ namespace DAL.Context
 {
    public class AppDbContext : IdentityDbContext<AppUser, AppUserRole, Guid>
     {
+        public AppDbContext(DbContextOptions<AppDbContext> options): base (options)
+        {
+
+        }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Order> Orders { get; set; }
-        public DbSet<ProductOrder> ProductOrders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Product> Products { get; set; }
-        public DbSet<Expense> Expenses { get; set; }
-        public DbSet<Costumer> Costumers { get; set; }
-
+        //public DbSet<Expense> Expenses { get; set; }
+        public DbSet<Customer> Customers { get; set; }
         public override int SaveChanges()
         {
             var modifiedEntries = ChangeTracker.Entries().Where(x => x.State == EntityState.Modified || x.State == EntityState.Added).ToList();
