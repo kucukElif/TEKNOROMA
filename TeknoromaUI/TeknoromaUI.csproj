@@ -14,11 +14,41 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\BLL\BLL.csproj" />
     <ProjectReference Include="..\DAL\DAL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Case\Controllers\" />
+    <Folder Include="Areas\Case\Data\" />
+    <Folder Include="Areas\Case\Models\" />
+    <Folder Include="Areas\Case\Views\" />
+    <Folder Include="Areas\Depot\Controllers\" />
+    <Folder Include="Areas\Depot\Data\" />
+    <Folder Include="Areas\Depot\Models\" />
+    <Folder Include="Areas\Depot\Views\" />
+    <Folder Include="Areas\Manager\Controllers\" />
+    <Folder Include="Areas\Manager\Data\" />
+    <Folder Include="Areas\Manager\Models\" />
+    <Folder Include="Areas\Manager\Views\" />
+    <Folder Include="Areas\Mobile\Controllers\" />
+    <Folder Include="Areas\Mobile\Data\" />
+    <Folder Include="Areas\Mobile\Models\" />
+    <Folder Include="Areas\Mobile\Views\" />
+    <Folder Include="Areas\SalesMan\Controllers\" />
+    <Folder Include="Areas\SalesMan\Data\" />
+    <Folder Include="Areas\SalesMan\Models\" />
+    <Folder Include="Areas\SalesMan\Views\" />
+    <Folder Include="Areas\Service\Controllers\" />
+    <Folder Include="Areas\Service\Data\" />
+    <Folder Include="Areas\Service\Models\" />
+    <Folder Include="Areas\Service\Views\" />
+    <Folder Include="Models\" />
+    <Folder Include="Areas\" />
   </ItemGroup>
 
 </Project>

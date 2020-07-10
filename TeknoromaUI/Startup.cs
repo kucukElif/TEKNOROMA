@@ -34,6 +34,8 @@ namespace TeknoromaUI
 
             services.AddScoped<ICategoryService, CategoryRepository>();
             services.AddScoped<IProductService, ProductRepository>();
+            services.AddScoped<IOrderService, OrderRepository>();
+            services.AddScoped<ICustomerService, CustomerRepository>();
             
 
             services.AddIdentity<AppUser, AppUserRole>().AddEntityFrameworkStores<AppDbContext>();
@@ -48,6 +50,7 @@ namespace TeknoromaUI
             }
 
             app.UseRouting();
+            app.UseStaticFiles();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
