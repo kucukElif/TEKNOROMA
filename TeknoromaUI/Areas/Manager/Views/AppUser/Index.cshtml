@@ -1,0 +1,55 @@
+﻿@model IEnumerable<AppUser>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Manager/Views/Shared/_ManagerLayout.cshtml";
+}
+
+    <div class="card">
+        <div class="card-header">
+
+        </div>
+
+        <div class="card-body">
+            <table id="usertable" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Kullanıcı</th>
+                        <th>Yetki Durumu</th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+                            <td>@user.Id</td>
+                            <td>@user.UserName</td>
+                            <td>
+                                <a asp-action="AssignManager" asp-controller="AppUser" asp-route-id="@user.Id" class="btn btn-sm btn-warning">Şube Müdürü</a>
+
+                                <a asp-action="AssignCase" asp-controller="AppUser" asp-route-id="@user.Id" class="btn btn-sm btn-warning">Kasa Satış</a>
+
+                                <a asp-action="AssignDepot" asp-controller="AppUser" asp-route-id="@user.Id" class="btn btn-sm btn-warning">Depo</a>
+
+                                <a asp-action="AssignMobile" asp-controller="AppUser" asp-route-id="@user.Id" class="btn btn-sm btn-warning">Mobil Satış</a>
+
+                                <a asp-action="AssignSalesman" asp-controller="AppUser" asp-route-id="@user.Id" class="btn btn-sm btn-warning">Muhasebe</a>
+
+                                <a asp-action="AssignService" asp-controller="AppUser" asp-route-id="@user.Id" class="btn btn-sm btn-warning">Teknik Servis</a>
+
+                            </td>
+                        </tr>
+
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+@section scripts{ 
+<script>
+    $(document).ready(function () {
+        $('#usertable').DataTable();
+    });
+</script>
+}

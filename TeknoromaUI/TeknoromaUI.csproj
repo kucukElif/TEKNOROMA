@@ -5,6 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.Identity.Owin" Version="2.2.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.2.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -23,18 +25,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Case\Controllers\" />
     <Folder Include="Areas\Case\Data\" />
     <Folder Include="Areas\Case\Models\" />
-    <Folder Include="Areas\Case\Views\" />
     <Folder Include="Areas\Depot\Controllers\" />
     <Folder Include="Areas\Depot\Data\" />
     <Folder Include="Areas\Depot\Models\" />
     <Folder Include="Areas\Depot\Views\" />
-    <Folder Include="Areas\Manager\Controllers\" />
     <Folder Include="Areas\Manager\Data\" />
-    <Folder Include="Areas\Manager\Models\" />
-    <Folder Include="Areas\Manager\Views\" />
     <Folder Include="Areas\Mobile\Controllers\" />
     <Folder Include="Areas\Mobile\Data\" />
     <Folder Include="Areas\Mobile\Models\" />
@@ -47,8 +44,6 @@
     <Folder Include="Areas\Service\Data\" />
     <Folder Include="Areas\Service\Models\" />
     <Folder Include="Areas\Service\Views\" />
-    <Folder Include="Models\" />
-    <Folder Include="Areas\" />
   </ItemGroup>
 
 </Project>

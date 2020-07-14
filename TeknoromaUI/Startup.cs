@@ -31,14 +31,13 @@ namespace TeknoromaUI
         {
             services.AddMvc(x => x.EnableEndpointRouting = false);
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("TeknoromaUI")));
-
-            services.AddScoped<ICategoryService, CategoryRepository>();
-            services.AddScoped<IProductService, ProductRepository>();
-            services.AddScoped<IOrderService, OrderRepository>();
-            services.AddScoped<ICustomerService, CustomerRepository>();
-            
-
             services.AddIdentity<AppUser, AppUserRole>().AddEntityFrameworkStores<AppDbContext>();
+            services.AddTransient<ICategoryService, CategoryRepository>();
+            services.AddTransient<IProductService, ProductRepository>();
+            services.AddTransient<IOrderService, OrderRepository>();
+            services.AddTransient<ICustomerService, CustomerRepository>();
+            services.AddTransient<ISupplierService, SupplierRepository>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,16 +47,24 @@ namespace TeknoromaUI
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseAuthentication();
+            app.UseAuthorization();//kimlik do?rulama
             app.UseRouting();
+
             app.UseStaticFiles();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                  name: "areas",
+                  template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+                );
 
-                    name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}"
-                    );
+                routes.MapRoute(
+               name: "default",
+               template: "{controller=Member}/{action=Login}/{id?}"
+             );
+
+
             });
 
             //app.UseEndpoints(endpoints =>
