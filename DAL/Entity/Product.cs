@@ -14,8 +14,12 @@ namespace DAL.Entity
         public decimal UnitsInStock { get; set; }
         public decimal UnitsonOrder { get; set; }
         [Column(TypeName ="decimal(18,2)")]
-        public decimal UnitPrice { get; set; }
+        public decimal PurchasePrice { get; set; }
+        [Column(TypeName = "decimal(18,2)")]
+        public decimal SalePrice { get; set; }
+        public string Unit { get; set; }
         public string ImagePath { get; set; }
+        public Guid CategoryID { get; set; }
         public virtual Category Category { get; set; }
         public virtual Supplier Supplier { get; set; }
         public virtual List<OrderDetail> OrderDetails { get; set; }

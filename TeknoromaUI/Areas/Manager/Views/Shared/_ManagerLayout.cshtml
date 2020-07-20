@@ -104,7 +104,7 @@
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
+    with font-awesome or any other icon font library -->
                         <li class="nav-item">
                             <a asp-action="Create" asp-controller="Home" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
@@ -122,22 +122,61 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a asp-action="Index" asp-controller="Identity" class="nav-link">
+                            <a asp-action="Index" asp-controller="Category" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
-                                    Kimlik Bilgileri
+                                    Ürün Kategorileri
                                 </p>
                             </a>
                         </li>
-                      
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Stock" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Stok Takip Raporu
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Identity" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Satış Takip Raporu
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Identity" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Tedarikçi Hareket Raporu
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Identity" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Ürün Liste Raporu
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-action="Index" asp-controller="Identity" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Gider Raporu
+                                </p>
+                            </a>
+                        </li>
                         @*<li class="nav-item">
-                                <a asp-action="Index" asp-controller="HomePage" class="nav-link">
-                                    <i class="nav-icon fas fa-th"></i>
-                                    <p>
-                                        Anasayfa Düzenlemeleri
-                                    </p>
-                                </a>
-                            </li>*@
+            <a asp-action="Index" asp-controller="HomePage" class="nav-link">
+                <i class="nav-icon fas fa-th"></i>
+                <p>
+                    Anasayfa Düzenlemeleri
+                </p>
+            </a>
+        </li>*@
 
                     </ul>
                 </nav>

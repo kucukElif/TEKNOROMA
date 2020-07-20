@@ -15,6 +15,7 @@ namespace DAL.Entity
         public decimal? UnitPrice { get; set; }
         public short? Quantity { get; set; }
         public Guid OrderID { get; set; }
+        public string BarcodeNo { get; set; }
 
         public decimal GetTotalPrice()
         {

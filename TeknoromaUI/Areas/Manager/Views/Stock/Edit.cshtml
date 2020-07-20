@@ -1,0 +1,74 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Manager/Views/Shared/_ManagerLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h2>Stok Güncelle</h2>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                    <!-- /.card-header -->
+                    <!-- form start -->
+                    <div class="container">
+          
+                    </div>
+                    <form role="form" asp-action="Edit" asp-controller="Stock" method="post" enctype="multipart/form-data">
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Ürün Adı</label>
+                                <input asp-for="Barcode" type="text" class="form-control" placeholder="ürün adı girin">
+                            </div>
+                            <div class="form-group">
+                                <label>Ürün Adı</label>
+                                <input asp-for="ProductName" type="text" class="form-control" placeholder="ürün adı girin">
+                            </div>
+                            <div class="form-group">
+                                <label>Satış Fiyatı</label>
+                                <input asp-for="SalePrice" type="text" class="form-control" placeholder="fiyat girin">
+                            </div>
+                            <div class="form-group">
+                                <label>Alış Fiyatı</label>
+                                <input asp-for="PurchasePrice" type="text" class="form-control" placeholder="stok adet girin">
+                            </div>
+                            <div class="form-group">
+                                <label>Kategori:</label>
+                                <select class="form-control custom-select" asp-for="CategoryID" asp-items="ViewBag.MainCategories">
+                                    <option selected="" disabled>Lütfen Kategori Seçin</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Stok Adeti</label>
+                                <input asp-for="UnitsInStock" type="text" class="form-control" placeholder="stok adet girin">
+                            </div>
+                            <div class="form-group">
+                                <label>Birim</label>
+                                <input asp-for="Unit" type="text" class="form-control" placeholder="birim girin">
+                            </div>
+                          
+                            
+                        </div>
+                        <!-- /.card-body -->
+
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">Güncelle</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section scripts{
+    <script src="~/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    <script>$(document).ready(function () {
+        bsCustomFileInput.init();
+    });</script>
+}
+
+

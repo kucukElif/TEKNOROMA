@@ -4,14 +4,16 @@ using DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace TeknoromaUI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200718120740_addProp")]
+    partial class addProp
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -387,7 +389,7 @@ namespace TeknoromaUI.Migrations
                     b.Property<string>("Barcode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("CategoryID")
+                    b.Property<Guid?>("CategoryID")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("CreatedAdUserName")
@@ -441,8 +443,8 @@ namespace TeknoromaUI.Migrations
                     b.Property<Guid?>("SupplierID")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Unit")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<short>("Unit")
+                        .HasColumnType("smallint");
 
                     b.Property<decimal>("UnitsInStock")
                         .HasColumnType("decimal(18,2)");
@@ -654,9 +656,7 @@ namespace TeknoromaUI.Migrations
                 {
                     b.HasOne("DAL.Entity.Category", "Category")
                         .WithMany()
-                        .HasForeignKey("CategoryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CategoryID");
 
                     b.HasOne("DAL.Entity.Supplier", "Supplier")
                         .WithMany()
