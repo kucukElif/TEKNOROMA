@@ -10,7 +10,7 @@ namespace DAL.Entity
     {
         public string Barcode { get; set; }
         public string ProductName { get; set; }
-        public short Quantity { get; set; }
+        public int Quantity { get; set; }
         public decimal UnitsInStock { get; set; }
         public decimal UnitsonOrder { get; set; }
         [Column(TypeName ="decimal(18,2)")]

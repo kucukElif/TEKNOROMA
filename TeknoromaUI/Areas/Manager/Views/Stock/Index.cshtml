@@ -37,6 +37,7 @@
         <td>
             <a asp-action="Edit" asp-controller="Stock" asp-route-id="@p.ID" class="btn btn-sm btn-warning">Düzenle</a>
             <a asp-action="Delete" asp-controller="Stock" asp-route-id="@p.ID" class="btn btn-sm btn-danger">Sil</a>
+
         </td>
     </tr>}
             </tbody>
@@ -47,8 +48,10 @@
 @section scripts{
     <script>$(document).ready(function () {
             $('#producttable').DataTable();
-        });</script>
-
-
+});
+       
+    </script>
+ 
+   
 }
 

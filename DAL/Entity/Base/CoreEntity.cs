@@ -16,7 +16,7 @@ namespace DAL.Entity.Base
             this.CreatedAdUserName = WindowsIdentity.GetCurrent().Name;
             this.CreatedComputerName = Environment.MachineName;
             this.CreatedIP = GetHostName();
-            this.CreatedBy = "admin";
+            this.CreatedBy = WindowsIdentity.GetCurrent().RoleClaimType;
         }
         public Guid ID { get; set; }
         public Status Status { get; set; }

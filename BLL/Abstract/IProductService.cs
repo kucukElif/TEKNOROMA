@@ -8,5 +8,6 @@ namespace BLL.Abstract
   public  interface IProductService :IGenericService<Product>
     {
         List<Product> GetTop10Products();
+      
     }
 }

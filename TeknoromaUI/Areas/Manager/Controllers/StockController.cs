@@ -8,6 +8,7 @@ using DAL.Entity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using TeknoromaUI.Areas.Manager.Models.ViewModels;
 
 namespace TeknoromaUI.Areas.Manager.Controllers
@@ -29,6 +30,7 @@ namespace TeknoromaUI.Areas.Manager.Controllers
             ProductVM productVM = new ProductVM();
             productVM.Products = productService.GetActive();
             productVM.Categories = categoryService.GetActive();
+            Product product = new Product();
             return View(productVM);
         }
 
@@ -95,5 +97,9 @@ namespace TeknoromaUI.Areas.Manager.Controllers
                 return View();
             }
         }
+
+       
+
+       
     }
 }
