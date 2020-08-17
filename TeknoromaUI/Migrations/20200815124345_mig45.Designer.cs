@@ -4,14 +4,16 @@ using DAL.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace TeknoromaUI.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200815124345_mig45")]
+    partial class mig45
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -219,9 +221,6 @@ namespace TeknoromaUI.Migrations
 
                     b.Property<string>("CreatedIP")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("Gender")
-                        .HasColumnType("bit");
 
                     b.Property<string>("ModifiedAdUserName")
                         .HasColumnType("nvarchar(max)");

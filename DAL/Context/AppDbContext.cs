@@ -1,6 +1,7 @@
 ﻿using DAL.Entity;
 using DAL.Entity.Base;
 using DAL.Entity.Enum;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
@@ -30,8 +31,8 @@ namespace DAL.Context
             string identity = WindowsIdentity.GetCurrent().Name;
             string computerName = Environment.MachineName;
             DateTime dateTime = DateTime.Now;
-            //Todo: Login yapan kullanıcı adı gönderilecek.
-            string user = "admin";
+
+            string user = "manager";
             string ip = CoreEntity.GetHostName();
             foreach (var item in modifiedEntries)
             {

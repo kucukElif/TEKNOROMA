@@ -37,6 +37,7 @@ namespace TeknoromaUI
             services.AddTransient<IOrderService, OrderRepository>();
             services.AddTransient<ICustomerService, CustomerRepository>();
             services.AddTransient<ISupplierService, SupplierRepository>();
+            services.AddTransient<IAppUserService, AppUserRepository>();
             
         }
 

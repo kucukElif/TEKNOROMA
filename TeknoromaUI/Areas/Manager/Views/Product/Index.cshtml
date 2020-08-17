@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Manager/Views/Shared/_ManagerLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+    </div>
+    <div class="card-body">
+        <table id="producttable" class="table table-striped">
+            <thead>
+                <tr>
+                <th>Barkod No</th>
+                <th>Ürün Adı</th>
+                <th>Ürün Adeti</th>
+                <th>Ürün Stok Durumu</th>
+                <th>Alış Fiyatı</th>
+                <th>Satış Fiyatı</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {<tr>
+                    <td>@item.Barcode.</td>
+                <td>@item.ProductName</td>
+                <td>@item.Quantity</td>
+                <td>@item.UnitsInStock</td>
+                <td>@item.PurchasePrice</td>
+                <td>@item.SalePrice</td>
+                
+                </tr>
+
+                }
+                
+            </tbody>
+        </table>
+    </div>
+</div>
+

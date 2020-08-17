@@ -25,41 +25,15 @@ namespace TeknoromaUI.Areas.Manager.Controllers
             this.productService = productService;
             this.categoryService = categoryService;
         }
-        public IActionResult Index()
+        public IActionResult ListCategories()
         {
-            ProductVM productVM = new ProductVM();
-            productVM.Products = productService.GetActive();
-            productVM.Categories = categoryService.GetActive();
-            return View(productVM);
+            return View(categoryService.GetActive());
         }
-
-        public IActionResult Create()
+        public IActionResult Index(Guid id)
         {
-            ViewBag.MainCategories = categoryService.GetActive().Select(x => new SelectListItem() { Text = x.CategoryName, Value = x.ID.ToString() });
-            return View();
+           
+            return View(productService.ListProductByCategory(id));
         }
-        //[HttpPost]
-        //public IActionResult Create(Product product, IFormFile image)
-        //{
-        //    try
-        //    {
-        //        string path;
-        //        if (image==null)
-        //        {
-        //            path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\images", "noimage.jpg");
-        //            product.ImagePath = "noimage.jpg";
-        //        }
-        //        else
-        //        {
-
-
-        //        }
-        //    }
-        //    catch (Exception)
-        //    {
-
-        //        throw;
-        //    }
-        //}
+      
     }
 }

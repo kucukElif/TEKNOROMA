@@ -1,0 +1,44 @@
+﻿@model SalesVM
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Manager/Views/Shared/_ManagerLayout.cshtml";
+}
+<div class="card">
+   
+    <div class="card-body">
+        <table id="categorytable" class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Ürün Barkod No</th>
+                    <th>Ürün Adı</th>
+                    <th>Katgorisi</th>
+                    <th>Çalışan Adı</th>
+                    <th>Çalışan Soyadı</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model.OrderDetails)
+                {
+                    <tr>
+                        <td>@Model.Product.Where(x=>x.ID==p.ProductID).FirstOrDefault().Barcode</td>
+                        <td>@Model.Product.Where(x=>x.ID==p.ProductID).FirstOrDefault().ProductName</td>
+                        <td>@Model.Orders.Where(x=>x.ID==p.OrderID).FirstOrDefault().AppUser.FirstName</td>
+                        <td>@Model.Orders.Where(x=>x.ID==p.OrderID).FirstOrDefault().AppUser.LastName</td>
+                       
+                    </tr>
+}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+$(document).ready(function () {
+            $('#categorytable').DataTable();
+        });</script>
+
+
+}
+

@@ -15,6 +15,8 @@ namespace DAL.Entity
         public string Phone { get; set; }
         public DateTime? BirthDate { get; set; }
         public string SalesNo { get; set; }
+        public bool Gender { get; set; }
+
 
 
     }

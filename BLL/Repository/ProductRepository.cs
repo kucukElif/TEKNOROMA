@@ -49,6 +49,11 @@ namespace BLL.Repository
             return context.Products.OrderByDescending(i => i.ID).Take(10).ToList();
         }
 
+        public List<Product> ListProductByCategory(Guid id)
+        {
+            return context.Products.Where(x => x.CategoryID == id).ToList();
+        }
+
         public void Remove(Guid id)
         {
             Product product = GetById(id);

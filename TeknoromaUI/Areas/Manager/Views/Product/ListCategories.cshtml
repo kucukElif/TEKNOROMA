@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Category>
+@{
+    ViewData["Title"] = "ListCategories";
+    Layout = "~/Areas/Manager/Views/Shared/_ManagerLayout.cshtml";
+}
+<h5>Listelemek istediğinizürün grubunun kategorisini seçiniz</h5>
+
+
+<div class="container">
+
+    <div class="row">
+        <div class="list-group">
+            @foreach (var item in Model)
+            {
+                <a asp-action="Index" asp-controller="Product" asp-route-id="@item.ID">@item.CategoryName</a>
+            }
+        </div>
+        </div>
+</div>
