@@ -5,8 +5,9 @@ using System.Text;
 
 namespace DAL.Entity
 {
-  public  class Customer:CoreEntity
+    public class CustomerData:CoreEntity
     {
+        public Customer Customer { get; set; }
         public string TC { get; set; }
         public string CustomerName { get; set; }
         public string EmailAddress { get; set; }
@@ -17,8 +18,5 @@ namespace DAL.Entity
         public string Phone { get; set; }
         public DateTime? BirthDate { get; set; }
         public string SalesNo { get; set; }
-
-
-
     }
 }

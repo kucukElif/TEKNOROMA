@@ -38,7 +38,9 @@ namespace TeknoromaUI
             services.AddTransient<ICustomerService, CustomerRepository>();
             services.AddTransient<ISupplierService, SupplierRepository>();
             services.AddTransient<IAppUserService, AppUserRepository>();
-            
+            services.AddTransient<ICustomerDataService, CustomerDataRepository>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

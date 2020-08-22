@@ -1,0 +1,26 @@
+﻿@model Customer
+@{
+    ViewData["Title"] = "GetCustomerByTC";
+    Layout = "~/Areas/Case/Views/Shared/_CaseLayout.cshtml";
+}
+
+    <div class="card">
+        <div class="card-header">
+            <form role="form" asp-action="GetCustomerByTC" asp-controller="Home" method="post">
+                <div class="form-group">
+                    <label for="tc">Müşteri TC</label>
+                    <input name="tc" id="tc" asp-for="TC" type="text" class="form-control" placeholder="Müşteri TC No girin">
+
+                    <br />
+                    <br />
+                    <button type="submit" class="btn btn-primary">müşteri getir</button>
+
+
+                </div>
+            </form>
+            @*<a asp-action="GetCustomer" asp-controller="Home" asp-route-id="@Model.ID" class="btn btn-sm btn-warning">Müşteri Getir</a>*@
+
+        </div>
+        
+    </div>
+

@@ -24,7 +24,9 @@ namespace DAL.Context
         public DbSet<Product> Products { get; set; }
         public DbSet<Supplier> Suppliers { get; set; }
         public DbSet<Customer> Customers { get; set; }
-        
+        public DbSet<CustomerData> CustomerDatas { get; set; }
+
+
         public override int SaveChanges()
         {
             var modifiedEntries = ChangeTracker.Entries().Where(x => x.State == EntityState.Modified || x.State == EntityState.Added).ToList();

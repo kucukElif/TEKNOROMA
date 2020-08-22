@@ -1,0 +1,67 @@
+﻿@model Customer
+@{
+    ViewData["Title"] = "GetCustomer";
+    Layout = "~/Areas/Case/Views/Shared/_CaseLayout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header">
+        <a asp-action="Edit" asp-controller="Home" asp-route-id="@Model.ID" class="btn btn-dark float-left">Müşteri Düzenle</a>
+        <a asp-action="Delete" asp-controller="Home" asp-route-id="@Model.ID" class="btn btn-danger float-right">Müşteri Sil</a>
+    </div>
+    <div class="card-body">
+        @*<table id="customertable">
+            <thead>
+                <tr>
+                    <th>Müşteri Tc No</th>
+                    <th>Müşteri Adı</th>
+                    <th>Şirket Adı</th>
+                    <th>Email Adresi</th>
+                    <th>Telefon Numarası</th>
+                </tr>
+            </thead>
+            <tbody>
+               
+                    <tr>
+                        <td>@Model.TC</td>
+                        <td>@Model.CustomerName</td>
+                        <td>@Model.CompanyName</td>
+                        <td>@Model.EmailAddress</td>
+                        <td>@Model.Phone</td>
+
+                    </tr>
+                
+
+            </tbody>
+        </table>*@
+        <ul style="list-style:none">
+            <li style="font-weight:bold">Müşteri Tc No</li>
+            <li>@Model.TC</li>
+            <br />
+            <li style="font-weight:bold">Müşteri Adı</li>
+            <li>@Model.CustomerName</li>
+            <br />
+            <li style="font-weight:bold">Şirket Adı</li>
+            <li>@Model.CompanyName</li>
+            <br />
+
+            <li style="font-weight:bold">Email Adresi</li>
+            <li>@Model.EmailAddress</li>
+            <br />
+
+            <li style="font-weight:bold">Telefon Numarası</li>
+            <li>@Model.Phone</li>
+        </ul>
+    </div>
+</div>
+
+@*@section scripts{
+    <script>
+$(document).ready(function () {
+            $('#customertable').DataTable();
+        });</script>
+
+
+}*@
+
+

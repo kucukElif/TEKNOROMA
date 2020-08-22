@@ -1,9 +1,11 @@
 ﻿using BLL.Abstract;
 using DAL.Context;
 using DAL.Entity;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -24,6 +26,12 @@ namespace BLL.Repository
             context.SaveChanges();
         }
 
+        public void AddCustomerData(CustomerData customerData)
+        {
+            context.CustomerDatas.Add(customerData);
+            context.SaveChanges();
+        }
+
         public bool Any(Expression<Func<Customer, bool>> exp)
         {
             return context.Customers.Any(exp);
@@ -37,6 +45,18 @@ namespace BLL.Repository
         public Customer GetById(Guid id)
         {
             return context.Customers.FirstOrDefault(x => x.ID == id);
+        }
+
+        public Customer GetByTc(Customer customer)
+        {
+            return context.Customers.FirstOrDefault(x=>x.TC==customer.TC);
+                
+
+        }
+
+        public List<CustomerData> GetCustomerDatas()
+        {
+           return context.CustomerDatas.ToList();
         }
 
         public List<Customer> GetDeafult(Expression<Func<Customer, bool>> exp)
@@ -65,5 +85,9 @@ namespace BLL.Repository
             context.Entry(entity).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
             context.SaveChanges();
         }
+
+        
+
+        
     }
 }

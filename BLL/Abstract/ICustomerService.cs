@@ -7,5 +7,8 @@ namespace BLL.Abstract
 {
     public interface ICustomerService:IGenericService<Customer>
     {
+       Customer GetByTc(Customer customer);
+        void AddCustomerData(CustomerData customerData);
+        List<CustomerData> GetCustomerDatas();
     }
 }

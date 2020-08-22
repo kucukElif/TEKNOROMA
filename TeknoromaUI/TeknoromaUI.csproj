@@ -26,7 +26,6 @@
 
   <ItemGroup>
     <Folder Include="Areas\Case\Data\" />
-    <Folder Include="Areas\Case\Models\" />
     <Folder Include="Areas\Depot\Controllers\" />
     <Folder Include="Areas\Depot\Data\" />
     <Folder Include="Areas\Depot\Models\" />
